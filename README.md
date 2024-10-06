@@ -1,1 +1,1 @@
-# cjremmett-frontend
+Angular frontend for cjremmett.com
