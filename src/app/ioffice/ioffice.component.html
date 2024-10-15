@@ -1,0 +1,45 @@
+<p style="text-align:center;">
+    <img src="https://cjremmett.com/images/30hy-lobby.png">
+</p>
+<p style="text-align:center; color:white; font-size: 16px">
+    Hello! Please enter your email address and secret key below to control which days you want to be automatically checked into your seat reservation.
+</p>
+<form id="user_options_form" style="text-align:center; color:white; font-size: 16px">
+    <label for="email_address">GAFG Email Address: </label>
+    <input #email_address type="text" id="email_address" name="email_address">
+    <label for="secret_key">Secret Key: </label>
+    <input #secret_key type="text" id="secret_key" name="secret_key">
+    
+    <label for="monday_checkin">Monday: </label>
+    <select name="monday_checkin" id="monday_checkin">
+      <option value="True">Yes</option>
+      <option value="False">No</option>
+    </select>
+
+    <label for="tuesday_checkin">Tuesday: </label>
+    <select name="tuesday_checkin" id="tuesday_checkin">
+      <option value="True">Yes</option>
+      <option value="False">No</option>
+    </select>
+
+    <label for="wednesday_checkin">Wednesday: </label>
+    <select name="wednesday_checkin" id="wednesday_checkin">
+      <option value="True">Yes</option>
+      <option value="False">No</option>
+    </select>
+
+    <label for="thursday_checkin">Thursday: </label>
+    <select name="thursday_checkin" id="thursday_checkin">
+      <option value="True">Yes</option>
+      <option value="False">No</option>
+    </select>
+
+    <label for="friday_checkin">Friday: </label>
+    <select name="friday_checkin" id="friday_checkin">
+      <option value="True">Yes</option>
+      <option value="False">No</option>
+    </select>
+  </form>
+<p style="text-align:center; color:white; font-size: 16px">
+    <button id="update_settings" type="button" ng-click="updateSettings(document.getElementById('email_address').value, document.getElementById('secret_key').value, document.getElementById('monday_checkin').value, document.getElementById('tuesday_checkin').value, document.getElementById('wednesday_checkin').value, document.getElementById('thursday_checkin').value, document.getElementById('friday_checkin').value)">Update Settings</button>
+</p>
