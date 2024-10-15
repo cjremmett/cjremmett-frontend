@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'icon-grid',
@@ -10,7 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class IconGridComponent
 {
-  arrayOfData: string[] = ["1", "2", "3", "4", "5"];
+  arrayOfData: string[] = [
+    '<a href="jellyfin"><img src="https://cjremmett.com/images/jellyfin.png"></a>',
+    '<a href="transmission"><img src="https://cjremmett.com/images/transmission.png"></a>',
+    '<a href="ioffice"><img src="https://cjremmett.com/images/hummingbird.png"></a>',
+    '<a href="guacamole"><img src="https://cjremmett.com/images/guacamole.png"></a>',
+    '<a href="https://homeassistant.cjremmett.com"><img src="https://cjremmett.com/images/homeassistant.png"></a>',
+    '<a href="kavita"><img src="https://cjremmett.com/images/kavita.png"></a>'
+  ];
   group = groupArray(this.arrayOfData, 3);
 }
 
