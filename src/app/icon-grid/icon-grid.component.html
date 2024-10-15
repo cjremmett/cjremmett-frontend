@@ -1,8 +1,10 @@
 <div style="text-align:center; color:white">
-    <div *ngFor="let row of group">
-        <span *ngFor="let somenum of row">
-            {{somenum}}
+    <div *ngFor="let banner of banners">
+        <span><banner [navigationLink]=banner[0] [imageLink]=banner[1]></banner></span>
+    </div>
+    <div style="margin-bottom: 40px;" *ngFor="let row of iconRows">
+        <span *ngFor="let iconContents of row">
+            <icon [navigationLink]=iconContents[0] [imageLink]=iconContents[1]></icon>
         </span>
     </div>
 </div>
-

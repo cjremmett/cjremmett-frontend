@@ -1,25 +1,30 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
+import { BannerComponent } from "../banner/banner.component";
 
 @Component({
   selector: 'icon-grid',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent, BannerComponent],
   templateUrl: './icon-grid.component.html',
   styleUrl: './icon-grid.component.css'
 })
 export class IconGridComponent
 {
-  arrayOfData: string[] = [
-    '<a href="jellyfin"><img src="https://cjremmett.com/images/jellyfin.png"></a>',
-    '<a href="transmission"><img src="https://cjremmett.com/images/transmission.png"></a>',
-    '<a href="ioffice"><img src="https://cjremmett.com/images/hummingbird.png"></a>',
-    '<a href="guacamole"><img src="https://cjremmett.com/images/guacamole.png"></a>',
-    '<a href="https://homeassistant.cjremmett.com"><img src="https://cjremmett.com/images/homeassistant.png"></a>',
-    '<a href="kavita"><img src="https://cjremmett.com/images/kavita.png"></a>'
+  banners: string[][] = [
+    ['https://fractalsoftworks.com/forum/index.php?topic=17094.0', 'https://cjremmett.com/images/starsector.png'],
   ];
-  group = groupArray(this.arrayOfData, 3);
+
+  icons: string[][] = [
+    ['jellyfin', 'https://cjremmett.com/images/jellyfin.png'],
+    ['transmission', 'https://cjremmett.com/images/transmission.png'],
+    ['ioffice', 'https://cjremmett.com/images/hummingbird.png'],
+    ['guacamole', 'https://cjremmett.com/images/guacamole.png'],
+    ['https://homeassistant.cjremmett.com', 'https://cjremmett.com/images/homeassistant.png'],
+    ['kavita', 'https://cjremmett.com/images/kavita.png']
+  ];
+  iconRows = groupArray(this.icons, 3);
 }
 
 function groupArray<T>(data: Array<T>, n: number): Array<T[]> 
