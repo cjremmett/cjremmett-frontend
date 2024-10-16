@@ -10,7 +10,7 @@
     <label for="secret_key">Secret Key: </label>
     <input type="text" id="secret_key" name="secret_key" [(value)]="secretKeyInputText">
     
-    <label for="monday_checkin">Monday: </label>
+    <!-- <label for="monday_checkin">Monday: </label>
     <select name="monday_checkin" id="monday_checkin">
       <option value="True">Yes</option>
       <option value="False">No</option>
@@ -38,8 +38,8 @@
     <select name="friday_checkin" id="friday_checkin">
       <option value="True">Yes</option>
       <option value="False">No</option>
-    </select>
+    </select> -->
   </form>
 <p style="text-align:center; color:white; font-size: 16px">
-    <button id="update_settings" type="button" (click)="updateSettings(document.getElementById('email_address').value, document.getElementById('secret_key').value, document.getElementById('monday_checkin').value, document.getElementById('tuesday_checkin').value, document.getElementById('wednesday_checkin').value, document.getElementById('thursday_checkin').value, document.getElementById('friday_checkin').value)">Update Settings</button>
+    <button id="update_settings" type="button" (click)="updateSettings()">Update Settings</button>
 </p>
