@@ -5,4 +5,4 @@ import { IofficeComponent } from './ioffice/ioffice.component';
 export const routes: Routes = [
     { path: '', component: IconGridComponent },
     { path: 'ioffice', component: IofficeComponent },
-  ];;
+  ];
