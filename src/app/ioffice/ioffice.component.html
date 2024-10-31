@@ -10,8 +10,8 @@
     <label for="secret_key">Secret Key: </label>
     <input type="text" id="secret_key" name="secret_key" [(value)]="secretKeyInputText">
     
-    <!-- <label for="monday_checkin">Monday: </label>
-    <select name="monday_checkin" id="monday_checkin">
+    <label for="monday_checkin">Monday: </label>
+    <select (ngModel)="mondayOption">
       <option value="True">Yes</option>
       <option value="False">No</option>
     </select>
@@ -38,7 +38,7 @@
     <select name="friday_checkin" id="friday_checkin">
       <option value="True">Yes</option>
       <option value="False">No</option>
-    </select> -->
+    </select>
   </form>
 <p style="text-align:center; color:white; font-size: 16px">
     <button id="update_settings" type="button" (click)="updateSettings()">Update Settings</button>

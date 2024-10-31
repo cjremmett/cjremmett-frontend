@@ -11,6 +11,11 @@ export class IofficeComponent
 {
   secretKeyInputText = '';
   emailAddressInputText = '';
+  mondayOption: boolean = false;
+  tuesdayOption: boolean = false;
+  wednesdayOption: boolean = false;
+  thursdayOption: boolean = false;
+  fridayOption: boolean = false;
   async updateSettings(): Promise<void>
   {
     const json_body = JSON.parse('{"email_address": "' + this.emailAddressInputText + '", "secret_key": "' + this.secretKeyInputText + '", "monday_checkin": "' + 'False' + '", "tuesday_checkin": "' + 'False' + '", "wednesday_checkin": "' + 'False' + '", "thursday_checkin": "' + 'False' + '", "friday_checkin": "' + 'False' + '"}');
