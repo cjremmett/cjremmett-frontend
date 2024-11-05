@@ -1,0 +1,10 @@
+.container {
+    text-align:center; 
+    color: white;
+}
+
+.icon-grid-table {
+    margin: 0px auto;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}

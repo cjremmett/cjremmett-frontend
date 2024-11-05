@@ -7,37 +7,37 @@
 <form id="user_options_form" ng-controller="formController" style="text-align:center; color:white; font-size: 16px">
     <label for="email_address">GAFG Email Address: </label>
     <input type="text" id="email_address" name="email_address" [(value)]="emailAddressInputText">
-    <label for="secret_key">Secret Key: </label>
+    <label style="margin-left:5px" for="secret_key">Secret Key: </label>
     <input type="text" id="secret_key" name="secret_key" [(value)]="secretKeyInputText">
     
-    <label for="monday_checkin">Monday: </label>
+    <label style="margin-left:5px" for="monday_checkin">Monday: </label>
     <select (ngModel)="mondayOption">
       <option value="True">Yes</option>
+      <option value="False" selected>No</option>
+    </select>
+
+    <label style="margin-left:5px" for="tuesday_checkin">Tuesday: </label>
+    <select (ngModel)="tuesdayOption">
+      <option value="True" selected>Yes</option>
       <option value="False">No</option>
     </select>
 
-    <label for="tuesday_checkin">Tuesday: </label>
-    <select name="tuesday_checkin" id="tuesday_checkin">
-      <option value="True">Yes</option>
+    <label style="margin-left:5px" for="wednesday_checkin">Wednesday: </label>
+    <select (ngModel)="wednesdayOption">
+      <option value="True" selected>Yes</option>
       <option value="False">No</option>
     </select>
 
-    <label for="wednesday_checkin">Wednesday: </label>
-    <select name="wednesday_checkin" id="wednesday_checkin">
-      <option value="True">Yes</option>
+    <label style="margin-left:5px" for="thursday_checkin">Thursday: </label>
+    <select (ngModel)="thursdayOption">
+      <option value="True" selected>Yes</option>
       <option value="False">No</option>
     </select>
 
-    <label for="thursday_checkin">Thursday: </label>
-    <select name="thursday_checkin" id="thursday_checkin">
+    <label style="margin-left:5px" for="friday_checkin">Friday: </label>
+    <select (ngModel)="fridayOption">
       <option value="True">Yes</option>
-      <option value="False">No</option>
-    </select>
-
-    <label for="friday_checkin">Friday: </label>
-    <select name="friday_checkin" id="friday_checkin">
-      <option value="True">Yes</option>
-      <option value="False">No</option>
+      <option value="False" selected>No</option>
     </select>
   </form>
 <p style="text-align:center; color:white; font-size: 16px">

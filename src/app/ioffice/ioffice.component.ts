@@ -29,7 +29,7 @@ export class IofficeComponent
     });
   
     const res_text = await response.text();
-    if(response.status === 200)
+    if(response.status < 300)
     {
       window.alert("Settings updated successfully!");
       this.secretKeyInputText = '';
