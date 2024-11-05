@@ -3,8 +3,16 @@
     color: white;
 }
 
+.banner-grid-table {
+    margin: 0px auto;
+    margin-top: -25px;
+    margin-bottom: -15px;
+}
+
 .icon-grid-table {
     margin: 0px auto;
-    border-collapse: separate;
-    border-spacing: 0 5px;
+}
+
+.icon-grid-row {
+    height: 290px
 }
