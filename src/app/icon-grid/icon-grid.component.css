@@ -5,14 +5,29 @@
 
 .banner-grid-table {
     margin: 0px auto;
-    margin-top: -25px;
-    margin-bottom: -15px;
 }
 
 .icon-grid-table {
     margin: 0px auto;
 }
 
-.icon-grid-row {
-    height: 290px
+@media only screen and (min-width: 1000px) {
+    .icon-grid-row {
+        height: 290px;
+    }
+
+    .banner-grid-table {
+        margin-top: -35px;
+        margin-bottom: -20px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .banner-grid-table {
+        table-layout:fixed;
+    }
+
+    .grid-image {
+        
+    }
 }
