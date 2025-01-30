@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'photography',
@@ -8,7 +9,23 @@ import { CommonModule } from '@angular/common';
   templateUrl: './photography.component.html',
   styleUrl: './photography.component.css'
 })
-export class PhotographyComponent {
+export class PhotographyComponent implements OnInit
+{
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
+
+  //photos = [];
+  ngOnInit(): void
+  {
+    this.activatedRoute.queryParams.subscribe(queryParams => {
+      console.log('Tags: ' + queryParams['tags']);
+      let query = '';
+      
+      fetch('https://cjremmett.com/api/photography/get-photos?webpage=' + window.location.href, { method: 'POST' })
+    });
+    
+  }
+
   photos = 
   [
     {

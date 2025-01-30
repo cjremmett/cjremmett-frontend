@@ -11,3 +11,11 @@
     text-align:center; 
     color: white;
 }
+
+.img-expand {
+    transition: transform .3s;
+}
+
+.img-expand:hover {
+    transform:scale(1.25);
+}
