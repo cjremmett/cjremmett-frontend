@@ -6,7 +6,6 @@
 .banner-grid-table {
     margin: 0px auto;
     margin-top: -1em;
-    margin-bottom: .5em;
     table-layout:fixed;
 }
 
@@ -17,6 +16,8 @@
 .grid-image {
     max-width: 100%;
     max-height: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .banner-image {

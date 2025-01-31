@@ -14,20 +14,24 @@ export class PhotographyComponent implements OnInit
   constructor(private activatedRoute: ActivatedRoute) {
   }
 
-  //photos = [];
+  // photos = [];
   ngOnInit(): void
   {
-    this.activatedRoute.queryParams.subscribe(queryParams => {
-      console.log('Tags: ' + queryParams['tags']);
-      let query = '';
+    // this.activatedRoute.queryParams.subscribe(queryParams => {
+    //   console.log('Tags: ' + queryParams['tags']);
+    //   let query = '';
+    //   if(queryParams['tags'] != null && queryParams['tags'] !== '')
+    //   {
+    //     query = '?tags= ' + queryParams['tags'];
+    //   }
       
-      fetch('https://cjremmett.com/api/photography/get-photos?webpage=' + window.location.href, { method: 'POST' })
-    });
-    
+    //   fetch('https://cjremmett.com/api/photography/get-photos' + query, { method: 'GET' }).then(async function(this: PhotographyComponent, response) {
+    //     this.photos = await response.json();
+    //   });
+    // });
   }
 
-  photos = 
-  [
+  photos = [
     {
       "_id": "679b9ce5d462b5cf45c325c3",
       "id": "34075325-8a92-4778-8515-7eebde95450f",
@@ -48,5 +52,4 @@ export class PhotographyComponent implements OnInit
       "uploadTimestamp": "1737484270652"
     }
   ]
-
 }
