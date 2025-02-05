@@ -21,7 +21,7 @@ export class PhotographyComponent implements OnInit
   ngOnInit(): void
   {
     this.activatedRoute.queryParams.subscribe(queryParams => {
-      console.log('Tags: ' + queryParams['tags']);
+      // console.log('Tags: ' + queryParams['tags']);
       let query = '';
       if(queryParams['tags'] != null && queryParams['tags'] !== '')
       {
