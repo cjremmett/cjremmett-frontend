@@ -11,4 +11,29 @@
 
 .tablePhotoData {
     margin: 0px auto;
+    text-align: left;
+}
+
+.photoInfoTableDataColumOne {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 15%;
+}
+
+.photoInfoTableDataColumnTwo {
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 55%;
+}
+
+.photoInfoTableDataColumnThree {
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 15%;
+}
+
+.photoInfoTableDataColumnFour {
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 15%;
 }

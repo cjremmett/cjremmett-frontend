@@ -1,18 +1,30 @@
 <div class="container">
     <div *ngFor="let photo of photoData">
-        <img class="photoFull" src="https://cjremmett.com/images/photography/{{photo.id}}/{{photo.full}}" >
+        <img class="photoFull" src="https://cjremmett.com/images/photography/{{photo.id}}/{{photo.id}}" >
         <table class="tablePhotoData">
             <tr>
-                <td>Camera: {{photo.camera}}</td>
-                <td>F-stop: {{photo.fNumber}}</td>
+                <td class="photoInfoTableDataColumnOne">Camera:</td>
+                <td class="photoInfoTableDataColumnTwo">{{photo.camera}}</td>
+                <td class="photoInfoTableDataColumnThree">F-stop:</td>
+                <td class="photoInfoTableDataColumnFour">{{photo.fNumber}}</td>
             </tr>
             <tr>
-                <td>Lens: {{photo.lens}}</td>
-                <td>Shutter Speed: {{photo.shutterSpeed}}</td>
+                <td class="photoInfoTableDataColumnOne">Lens:</td>
+                <td class="photoInfoTableDataColumnTwo">{{photo.lens}}</td>
+                <td class="photoInfoTableDataColumnThree">Shutter Speed:</td>
+                <td class="photoInfoTableDataColumnFour">{{photo.shutterSpeed}}</td>
             </tr>
             <tr>
-                <td>Focal Length: {{photo.focalLength}}</td>
-                <td>ISO: {{photo.iso}}</td>
+                <td class="photoInfoTableDataColumnOne">Focal Length:</td>
+                <td class="photoInfoTableDataColumnTwo">{{photo.focalLength}}</td>
+                <td class="photoInfoTableDataColumnThree">ISO:</td>
+                <td class="photoInfoTableDataColumnFour">{{photo.iso}}</td>
+            </tr>
+            <tr>
+                <td class="photoInfoTableDataColumnOne" style="padding-top: 1em;">[Download RAW]</td>
+                <td class="photoInfoTableDataColumnTwo"></td>
+                <td class="photoInfoTableDataColumnThree"></td>
+                <td class="photoInfoTableDataColumnFour"></td>
             </tr>
         </table>
     </div>
