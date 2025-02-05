@@ -1,0 +1,10 @@
+.container {
+    text-align:center; 
+    color: white;
+}
+
+.photoFull {
+    max-width:96%;
+    max-height:100%;
+    vertical-align: middle;
+}
