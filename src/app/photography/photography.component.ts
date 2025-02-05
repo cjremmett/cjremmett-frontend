@@ -35,9 +35,18 @@ export class PhotographyComponent implements OnInit
 
   photos: Photo[] = [];
 
-  ngOnInit(): void {
-    this.photosService.getPhotos().subscribe((photos) => {
-      this.photos = photos;
+  ngOnInit(): void
+  {
+    this.activatedRoute.queryParams.subscribe(queryParams => {
+      console.log('Tags: ' + queryParams['tags']);
+      let query = '';
+      if(queryParams['tags'] != null && queryParams['tags'] !== '')
+      {
+        query = '?tags= ' + queryParams['tags'];
+      }
+      this.photosService.getPhotos(query).subscribe((photos) => {
+        this.photos = photos;
+      });
     });
   }
 

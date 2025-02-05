@@ -13,7 +13,7 @@ export class PhotosService {
 
   constructor(private http: HttpClient) {}
 
-  getPhotos(): Observable<Photo[]> {
-    return this.http.get<Photo[]>(this.baseUrl);
+  getPhotos(query: string): Observable<Photo[]> {
+    return this.http.get<Photo[]>(this.baseUrl + query);
   }
 }
