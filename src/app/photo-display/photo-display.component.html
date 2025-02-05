@@ -1,5 +1,19 @@
 <div class="container">
     <div *ngFor="let photo of photoData">
         <img class="photoFull" src="https://cjremmett.com/images/photography/{{photo.id}}/{{photo.full}}" >
+        <table class="tablePhotoData">
+            <tr>
+                <td>Camera: {{photo.camera}}</td>
+                <td>F-stop: {{photo.fNumber}}</td>
+            </tr>
+            <tr>
+                <td>Lens: {{photo.lens}}</td>
+                <td>Shutter Speed: {{photo.shutterSpeed}}</td>
+            </tr>
+            <tr>
+                <td>Focal Length: {{photo.focalLength}}</td>
+                <td>ISO: {{photo.iso}}</td>
+            </tr>
+        </table>
     </div>
 </div>
