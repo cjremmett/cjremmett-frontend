@@ -16,6 +16,7 @@ export class PhotoDisplayComponent  implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private photosService: PhotoDataService) { }
   
   photoData: PhotoData[] = [];
+  formattedTime = '';
 
   ngOnInit(): void
   {
@@ -23,8 +24,17 @@ export class PhotoDisplayComponent  implements OnInit {
       let photoDataId = params.get("id");
       this.photosService.getPhotoData(photoDataId).subscribe((photoData) => {
         this.photoData = photoData;
-        console.log(JSON.stringify(photoData));
-        console.log(JSON.stringify(this.photoData));
+        
+        let date = new Date(0); // The 0 there is the key, which sets the date to the epoch
+        date.setUTCSeconds(this.photoData[0].uploadTimestamp / 1000);
+        console.log(date);
+        console.log(this.photoData[0].uploadTimestamp);
+
+        let month = date.toLocaleString('default', { month: 'long' });
+        let day = date.getDate();
+        let year = date.getFullYear();
+
+        this.formattedTime = month + ' ' + day + ', ' + year;
       });
     });
   }

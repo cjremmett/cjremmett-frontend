@@ -1,27 +1,33 @@
 <div class="container">
     <div *ngFor="let photo of photoData">
-        <img class="photoFull" src="https://cjremmett.com/images/photography/{{photo.id}}/{{photo.id}}" >
+        <img class="photoFull" src="https://cjremmett.com/images/photography/{{photo.id}}/{{photo.full}}" >
         <table class="tablePhotoData">
             <tr>
-                <td class="photoInfoTableDataColumnOne">Camera:</td>
-                <td class="photoInfoTableDataColumnTwo">{{photo.camera}}</td>
-                <td class="photoInfoTableDataColumnThree">F-stop:</td>
-                <td class="photoInfoTableDataColumnFour">{{photo.fNumber}}</td>
+                <td class="photoInfoTableDataColumnOne" style="color: rgb(220, 220, 220);">Camera:</td>
+                <td class="photoInfoTableDataColumnTwo" style="color: rgb(220, 220, 220);">{{photo.camera}}</td>
+                <td class="photoInfoTableDataColumnThree" style="color: rgb(220, 220, 220);">F-stop:</td>
+                <td class="photoInfoTableDataColumnFour" style="color: rgb(220, 220, 220);">{{photo.fNumber}}</td>
             </tr>
             <tr>
-                <td class="photoInfoTableDataColumnOne">Lens:</td>
-                <td class="photoInfoTableDataColumnTwo">{{photo.lens}}</td>
-                <td class="photoInfoTableDataColumnThree">Shutter Speed:</td>
-                <td class="photoInfoTableDataColumnFour">{{photo.shutterSpeed}}</td>
+                <td class="photoInfoTableDataColumnOne" style="color: rgb(220, 220, 220);">Lens:</td>
+                <td class="photoInfoTableDataColumnTwo" style="color: rgb(220, 220, 220);">{{photo.lens}}</td>
+                <td class="photoInfoTableDataColumnThree" style="color: rgb(220, 220, 220);">Shutter Speed:</td>
+                <td class="photoInfoTableDataColumnFour" style="color: rgb(220, 220, 220);">{{photo.shutterSpeed}}</td>
             </tr>
             <tr>
-                <td class="photoInfoTableDataColumnOne">Focal Length:</td>
-                <td class="photoInfoTableDataColumnTwo">{{photo.focalLength}}</td>
-                <td class="photoInfoTableDataColumnThree">ISO:</td>
-                <td class="photoInfoTableDataColumnFour">{{photo.iso}}</td>
+                <td class="photoInfoTableDataColumnOne" style="color: rgb(220, 220, 220);">Focal Length:</td>
+                <td class="photoInfoTableDataColumnTwo" style="color: rgb(220, 220, 220);">{{photo.focalLength}}</td>
+                <td class="photoInfoTableDataColumnThree" style="color: rgb(220, 220, 220);">ISO:</td>
+                <td class="photoInfoTableDataColumnFour" style="color: rgb(220, 220, 220);">{{photo.iso}}</td>
             </tr>
             <tr>
-                <td class="photoInfoTableDataColumnOne" style="padding-top: 1em;">[Download RAW]</td>
+                <td class="photoInfoTableDataColumnOne" style="padding-top: 2em; color: rgb(220, 220, 220);">Uploaded {{formattedTime}}</td>
+                <td class="photoInfoTableDataColumnTwo"></td>
+                <td class="photoInfoTableDataColumnThree"></td>
+                <td class="photoInfoTableDataColumnFour"></td>
+            </tr>
+            <tr>
+                <td class="photoInfoTableDataColumnOne"><a style="color: rgb(220, 220, 220);" href="https://cjremmett.com/images/photography/{{photo.id}}/{{photo.raw}}">Download RAW</a></td>
                 <td class="photoInfoTableDataColumnTwo"></td>
                 <td class="photoInfoTableDataColumnThree"></td>
                 <td class="photoInfoTableDataColumnFour"></td>

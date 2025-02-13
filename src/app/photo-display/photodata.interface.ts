@@ -7,6 +7,6 @@ export interface PhotoData {
     lens: string
     raw: string
     shutterSpeed: string
-    uploadTimestamp: Date
+    uploadTimestamp: number
     id: string
   }
