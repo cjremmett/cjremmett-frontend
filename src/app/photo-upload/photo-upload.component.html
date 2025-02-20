@@ -6,9 +6,9 @@
     </tr>
     <tr>
       <td class="photoUploadTableColumn">
-        <form id="tags-form" ng-controller="tagsFormController">
+        <form>
           <label for="tags">Tags (comma separated): </label>
-          <input type="text" id="tags" name="tags" [(value)]="tags">
+          <input type="text" id="tags" name="tags" [(ngModel)]="tags">
         </form>
         <button id="create_photo" type="button" (click)="createPhoto()">Create New Photo</button>
       </td>
