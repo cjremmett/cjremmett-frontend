@@ -17,3 +17,7 @@
   width: 50%;
   border: 1px solid;
 }
+
+.authorizationTokenField {
+  padding-bottom: 2em;
+}

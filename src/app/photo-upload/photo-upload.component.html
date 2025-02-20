@@ -1,6 +1,20 @@
 <div class="container">
   <table class="tablePhotoUpload">
     <tr>
+      <td>
+        <form class="authorizationTokenField">
+          <label for="apiToken">Authorization token:</label>
+          <input type="text" id="apiToken" name="apiToken" [(ngModel)]="apiToken">
+        </form>
+      </td>
+      <td>
+        <form class="authorizationTokenField">
+          <label for="uuid">Photo UUID:</label>
+          <input type="text" id="uuid" name="uuid" [(ngModel)]="uuid">
+        </form>
+      </td>
+    </tr>
+    <tr>
       <td>Create New Photo:</td>
       <td>Upload/Replace Image Files:</td>
     </tr>

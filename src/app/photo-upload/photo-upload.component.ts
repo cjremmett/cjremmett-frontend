@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './photo-upload.component.css'
 })
 export class PhotoUploadComponent {
+  apiToken = '';
   tags = '';
   uuid = '';
   async createPhoto(): Promise<void>
@@ -35,6 +36,7 @@ export class PhotoUploadComponent {
       headers: 
       {
         "Content-Type": "application/json",
+        "token": this.apiToken,
       },
       body: tagsJsonString
     });
