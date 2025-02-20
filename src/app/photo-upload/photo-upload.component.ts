@@ -16,6 +16,7 @@ export class PhotoUploadComponent {
     for(const tag of tagsArray)
     {
       let tagTemp = (tag.trim()).toLowerCase();
+      tagsJsonString = tagsJsonString + '"' + tagTemp + '": true,'
     }
   }
 }
