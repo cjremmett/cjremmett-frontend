@@ -26,7 +26,19 @@
         </form>
         <button id="create_photo" type="button" (click)="createPhoto()">Create New Photo</button>
       </td>
-      <td class="photoUploadTableColumn">world</td>
+      <td class="photoUploadTableColumn">
+        <div>
+          <div>
+            <label>
+              <input type="file" multiple (change)="selectFiles($event)" />
+            </label>
+          </div>
+        
+          <div>
+            <button [disabled]="!selectedFiles" (click)="uploadFiles()">Upload</button>
+          </div>
+        </div>
+      </td>
     </tr>
   </table>
 </div>

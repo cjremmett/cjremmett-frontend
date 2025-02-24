@@ -1,14 +1,60 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FileUploadService } from './photo-upload-service.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-photo-upload',
   standalone: true,
-  imports: [ FormsModule ],
+  imports: [ FormsModule, CommonModule ],
   templateUrl: './photo-upload.component.html',
   styleUrl: './photo-upload.component.css'
 })
 export class PhotoUploadComponent {
+  selectedFiles?: FileList;
+  progressInfos: any[] = [];
+  message: string[] = [];
+
+  constructor(private uploadService: FileUploadService) { }
+
+  selectFiles(event: any): void {
+    this.message = [];
+    this.progressInfos = [];
+    this.selectedFiles = event.target.files;
+  }
+
+  uploadFiles(): void {
+  
+    if (this.selectedFiles) {
+      for (let i = 0; i < this.selectedFiles.length; i++) {
+        this.upload(i, this.selectedFiles[i]);
+      }
+    }
+  }
+
+  upload(idx: number, file: File): void {
+    this.progressInfos[idx] = { value: 0, fileName: file.name };
+  
+    if (file) {
+      this.uploadService.upload(file, this.uuid, this.apiToken).subscribe({
+        next: (event: any) => {
+          if (event.type === HttpEventType.UploadProgress) {
+            this.progressInfos[idx].value = Math.round(100 * event.loaded / event.total);
+          } else if (event instanceof HttpResponse) {
+            alert('Successful upload: ' + file.name);
+          }
+        },
+        error: (err: any) => {
+          alert('Failed upload: ' + file.name);
+        }
+      });
+    }
+
+    
+  }
+
   apiToken = '';
   tags = '';
   uuid = '';
