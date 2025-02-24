@@ -51,8 +51,6 @@ export class PhotoUploadComponent {
         }
       });
     }
-
-    
   }
 
   apiToken = '';
@@ -60,14 +58,11 @@ export class PhotoUploadComponent {
   uuid = '';
   async createPhoto(): Promise<void>
   {
-    console.log(this.tags);
     let tagsArray = this.tags.split(',');
     let tagsJsonString = '{';
     for(const tag of tagsArray)
     {
-      console.log(tag);
       let tagTemp = (tag.trim()).toLowerCase();
-      console.log(tagTemp);
       tagsJsonString = tagsJsonString + '"' + tagTemp + '": true,';
     }
     if(tagsJsonString.slice(-1) === ',')
@@ -96,6 +91,27 @@ export class PhotoUploadComponent {
     else
     {
       window.alert("Photo creation failed. Error message:\n\n" + JSON.stringify(response_json));
+    }
+  }
+
+  async reloadMetadata(): Promise<void>
+  {
+    const response = await fetch('https://cjremmett.com/api/photography/reload-tables', {
+      method: 'PUT',
+      headers: 
+      {
+        "Content-Type": "application/json",
+        "token": this.apiToken,
+      }
+    });
+  
+    if(response.status < 300)
+    {
+      window.alert('Reloaded metadata successfully.');
+    }
+    else
+    {
+      window.alert('Metadata reload failed.');
     }
   }
 }
