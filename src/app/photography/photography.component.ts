@@ -16,7 +16,8 @@ export class PhotographyComponent implements OnInit
   constructor(private activatedRoute: ActivatedRoute, private photosService: PhotosService) {
   }
 
-  photos: Photo[] = [];
+  photoResponse : Photo[] = [];
+  photos: Photo[][] = [[]];
 
   ngOnInit(): void
   {
@@ -28,7 +29,20 @@ export class PhotographyComponent implements OnInit
         query = '?tags= ' + queryParams['tags'];
       }
       this.photosService.getPhotos(query).subscribe((photos) => {
-        this.photos = photos;
+        this.photoResponse = photos;
+
+        // Turn the 1D array into a 2D array so we can have five images per row
+        let imagesPerRow = 5;
+        for(let i = 0; i < Math.floor(this.photoResponse.length / imagesPerRow) + 1; i++)
+        {
+          for(let j = 0; j < imagesPerRow; j++)
+          {
+            if((i * 5) + j < this.photoResponse.length)
+            {
+              this.photos[i][j] = this.photoResponse[(i * 5) + j];
+            }
+          }
+        }
       });
     });
   }
