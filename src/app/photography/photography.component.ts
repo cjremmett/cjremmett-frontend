@@ -37,9 +37,14 @@ export class PhotographyComponent implements OnInit
         {
           for(let j = 0; j < imagesPerRow; j++)
           {
-            if((i * 5) + j < this.photoResponse.length)
+            if((i * imagesPerRow) + j < this.photoResponse.length)
             {
-              this.photos[i][j] = this.photoResponse[(i * 5) + j];
+              if(this.photos.length <= i)
+              {
+                this.photos.push([])
+              }
+
+              this.photos[i][j] = this.photoResponse[(i * imagesPerRow) + j];
             }
           }
         }
